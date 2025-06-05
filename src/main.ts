@@ -1,9 +1,12 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import Application from "./app"
+import Application, {info} from "./app"
 // @ts-ignore
-window.metoolsDevTools = Application
-const app = createApp(Application.entry)
+window.metoolsDevTools = {
+   app: Application,
+   info: info,
+}
+const app = createApp(Application)
 
 app.use(createPinia())
 
